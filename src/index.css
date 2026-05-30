@@ -1,0 +1,41 @@
+/* --- System Design Design Tokens --- */
+:root {
+  --color-dark: #1C1C1C;
+  --color-bg: #F7F4EF;
+  --color-accent: #C8A96B;
+  --color-text-muted: #575757;
+  
+  /* Fluid Typography via clamp() */
+  --font-size-display: clamp(2rem, 5vw + 1rem, 3.5rem);
+  --font-size-h1: clamp(1.75rem, 4vw + 1rem, 2.5rem);
+  --font-size-h2: clamp(1.25rem, 2vw + 1rem, 1.75rem);
+  --font-size-body: clamp(1rem, 1vw + 0.8rem, 1.15rem);
+  --font-size-small: clamp(0.85rem, 0.5vw + 0.7rem, 0.95rem);
+  
+  --max-width-reading: 65ch;
+  --touch-target-min: 44px;
+}
+
+/* --- Base Reset & Editorial Rules --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+/* --- Animation Rules Built for Accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
