@@ -1,0 +1,28 @@
+.header {
+    border-bottom: 1px solid rgba(28, 28, 28, 0.08);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-bg);
+}
+.logoButton {
+    font-size: 1.25rem;
+    font-family: Georgia, serif;
+    letter-spacing: 0.05em;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.navButton {
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.navButtonActive {
+    font-weight: 700;
+}
