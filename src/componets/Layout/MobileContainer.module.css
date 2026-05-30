@@ -1,0 +1,11 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 0 40px rgba(28, 28, 28, 0.05);
+    transition: max-width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
