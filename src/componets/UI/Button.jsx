@@ -53,7 +53,6 @@ export default function Button({
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
       aria-label={ariaLabel}
-      onFocus={(e) => (e.target.style.outline = '2px solid var(--color-accent)')}
       onBlur={(e) => (e.target.style.outline = 'none')}
     >
       {children}
