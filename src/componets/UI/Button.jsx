@@ -53,7 +53,6 @@ export default function Button({
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
       aria-label={ariaLabel}
-      onBlur={(e) => (e.target.style.outline = 'none')}
     >
       {children}
     </button>
