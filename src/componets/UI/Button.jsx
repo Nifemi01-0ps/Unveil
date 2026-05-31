@@ -1,9 +1,12 @@
+import { Link } from "react-router";
+
 export default function Button({ 
   children, 
   variant = 'primary', 
   onClick, 
   disabled = false,
-  ariaLabel 
+  ariaLabel,
+  to, 
 }) {
   const baseStyle = {
     cursor: disabled ? 'not-allowed' : 'pointer',
@@ -37,7 +40,13 @@ export default function Button({
   };
 
   const combinedStyle = { ...baseStyle, ...variants[variant] };
-
+  if (to) {
+    return (
+      <Link to={to} style={combinedStyle} aria-label={ariaLabel}>
+        {children}
+      </Link>
+    )
+  }
   return (
     <button
       style={combinedStyle}
