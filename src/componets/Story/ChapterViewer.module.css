@@ -1,0 +1,35 @@
+.article {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+}
+.progressBarContainer {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 2.5rem;
+}
+.progressBarStep {
+    flex: 1;
+    height: 2px;
+    background-color: rgba(28, 28, 28, 0.1);
+    transition: background-color 0.4s ease;
+}
+.progressStepActive {
+    background-color: var(--color-dark);
+}
+.header {
+    margin-bottom: 2rem;
+}
+.subtitle {
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+}
+.mainSection {
+    flex: 1;
+}
+.footer {
+ margin-top: 3rem;
+ padding-bottom: 2rem;   
+}
