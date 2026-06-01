@@ -24,7 +24,8 @@
 .artistTag {
     font-size: var(--font-size-small);
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: var(--color-text-muted);
     letter-spacing: 0.1em;
     margin-bottom: 0.5rem;
+    font-weight: 600;
 }
