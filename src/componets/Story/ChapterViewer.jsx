@@ -6,23 +6,33 @@ import { useEffect, useRef, useState } from "react";
 
 export default function ChapterViewer({ story, onJourneyOwned }) {
     const [currentStep, setCurrentStep] = useState(1);
-    const steps = [1, 2, 3, 4];
     const topRef = useRef(null);  
-    
+    // Create Steps dynamically
+    const steps = Array.from(
+        { length: story.chapters.length + 1},
+        (_, index) => index + 1
+    );
+
     useEffect(() => {
         if (topRef.current) {
             topRef.current.scrollIntoView({ behaviour: 'smooth' });
         }
     }, [currentStep]);
 
-    if (currentStep === 4) {
-        return <ArtworkReveal story={story} onJourneyOwned={onJourneyOwned}/>
+    if (currentStep === steps.length) {
+        return (
+            <ArtworkReveal story={story} onJourneyOwned={onJourneyOwned}/>
+        );
     }
-    const activeChapter = story.chapters.find(
-        c => c.id === currentStep
-    );
+    const activeChapter = story.chapters[currentStep - 1];
     return (
         <article ref={topRef} className={styles.article}>
+            {/* Unveil Sub Header Info */}
+            <div className={styles.subHeader}>
+                <p className={styles.journalVolume}>
+                    {story.title} by {story.artist} • Unveil Journal | Vol. 1
+                </p>
+            </div>
             {/* Progress Bar */}
             <div className={styles.progressBarContainer} aria-hidden="true">
                 {steps.map((step) => (
@@ -30,23 +40,29 @@ export default function ChapterViewer({ story, onJourneyOwned }) {
                 ))}
             </div>
 
+            {/* Header */}
             <header className={styles.header}>
-                <span className={styles.subtitle}>
-                    {activeChapter.subtitle}
-                </span>
-                <EditorialTitle level="h1" style={{ marginTop: '0.5rem' }}>
-                    {activeChapter.title}
+                <EditorialTitle level="h2" style={{ fontSize: '1.4rem', color: 'var(--color-dark)', lineHeight: '1.3', marginBottom: '1.75rem', fontFamily: 'Georgia, serif', fontWeight: '400' }}>
+                    Chapter {currentStep}: {activeChapter.title}
                 </EditorialTitle>
+                <span className={styles.subtitle}>
+                    {activeChapter.subtitle} || 'Creative Execution Crises'
+                </span>
             </header>
-
+                {/* Content */}
             <section className={styles.mainSection}>
-                <EditorialBody style={{ lineHeight: '1.8', textAlign: 'justify'}}>
+                <EditorialBody style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--color-dark)' }}>
                     {activeChapter.content}
                 </EditorialBody>
+                <div className={styles.imageWrapper}>
+                    <img src={story.imageUrl} alt={story.artworkAlt} className={styles.image} />
+                </div>
             </section>
+            {/* Unveil Footer */}
             <footer className={styles.footer}>
-                <Button variant="primary" onClick={() => setCurrentStep(prev => prev + 1)}>
-                    {currentStep === 3 ? 'Step Into the Reveal' : 'Continue Journey'}
+                <Button variant="primary" onClick={() => setCurrentStep((prev) => prev + 1)
+                }>
+                    {currentStep === steps.length - 1 ? 'Reveal Artwork' : 'Unlock Next Chapter'}
                 </Button>
             </footer>
         </article>
