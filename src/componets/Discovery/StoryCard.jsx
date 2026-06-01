@@ -16,14 +16,14 @@ export default memo(function StoryCard({ story }) {
                 <div className={styles.gradientOverlay}></div>
             </div>
             <p className={styles.artistTag}>
-                {story.artist}
+                {story.artist || 'UNVEIL Journal'}
             </p>
-            <EditorialTitle level="h2" style={{ marginBottom: '1.5rem' }}>
-                {story.hook}
+            <EditorialTitle level="h2" style={{ marginBottom: '1.5rem', fontSize: '1.4rem', lineHeight: '1.2' }}>
+                {story.title || 'Untitled Journey'} 
             </EditorialTitle>
             <Button variant="accent" to={`/story${story.id}`}>
-                Enter Journey
+                Continue Journey
             </Button>
         </article>
-    )
+    );
 })
