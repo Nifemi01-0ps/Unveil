@@ -94,7 +94,7 @@ export default function Onboarding() {
                         Continue Registration
                     </button>
                 </form>
-                <button onClick={() => setStep('role-selcet')} className={styles.backLink}>
+                <button onClick={() => setStep('role-select')} className={styles.backLink}>
                     ← Go back to role selection
                 </button>
             </div>
