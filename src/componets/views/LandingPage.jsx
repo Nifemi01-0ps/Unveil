@@ -12,7 +12,7 @@ export default function LandingPage() {
                     Discover the Story Behind the Art.
                 </EditorialTitle>
                 <p className={styles.heroSubtitle}>Unveil: The global editorial journal of human creative breakthrough.</p>
-                <div className={styles.ActionGroup}>
+                <div className={styles.heroActionGroup}>
                     <Link to='/onboarding' className={styles.primaryButton}>
                         Get Started
                     </Link>
