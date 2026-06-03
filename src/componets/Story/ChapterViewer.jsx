@@ -19,7 +19,7 @@ export default function ChapterViewer({ stories, onJourneyOwned }) {
 
       if (!story) {
         return (
-            <div style={{ padding: '3rem', textAlign: 'center' }}>
+            <div className={styles.notStoryDiv}>
                 <p>Story not found or loading invalid journey identifier.</p>
             </div>
         );
@@ -28,7 +28,6 @@ export default function ChapterViewer({ stories, onJourneyOwned }) {
         { length: story.chapters.length + 1},
         (_, index) => index + 1
     );
-    console.log('currentStep:', currentStep, '| steps.length:', steps.length, '| chapters:', story.chapters.length);
     if (currentStep === steps.length) {
         return (
             <ArtworkReveal story={story} onJourneyOwned={onJourneyOwned}/>
