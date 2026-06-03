@@ -8,7 +8,7 @@ export default function ArtworkReveal({ story, onJourneyOwned }) {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsRevealed(true);
-        }, 150);
+        }, 2500);
 
         return () => {
             clearTimeout(timer);
