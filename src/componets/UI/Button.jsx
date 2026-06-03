@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Button({ 
   children, 
@@ -11,7 +11,7 @@ export default function Button({
   const baseStyle = {
     cursor: disabled ? 'not-allowed' : 'pointer',
     fontFamily: 'inherit',
-    border: 'none',
+    color: 'inherit',
     background: 'none',
     minHeight: 'var(--touch-target-min)',
     minWidth: 'var(--touch-target-min)',

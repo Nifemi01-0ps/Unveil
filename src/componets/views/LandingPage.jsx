@@ -2,8 +2,20 @@ import { Link } from "react-router";
 import { EditorialTitle } from "../UI/Typography.jsx";
 import { mockStories } from "../../data/mockStories.js";
 import styles from "./LandingPage.module.css";
+import { useRef } from "react";
 
 export default function LandingPage() {
+    const trackRef = useRef(null);
+    function handleScroll(direction) {
+        if (!trackRef) return;
+        const track = trackRef.current;
+        const cardWidth = track.firstChild?.getBoundingClientRect().width || 300;
+        const scrollAmount = direction === 'next' ? cardWidth : -cardWidth;
+        track.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }
     return (
         <div className={styles.container}>
             {/* Hero Leader Section */}
@@ -29,13 +41,13 @@ export default function LandingPage() {
                         Featured Journeys
                     </h2>
                     <div className={styles.carouselArrows}>
-                        <span>&lt;</span>
-                        <span>&gt;</span>
+                        <span onClick={() => handleScroll('prev')} className={styles.scrollBar}>&lt;</span>
+                        <span onClick={() => handleScroll('next')} className={styles.scrollBar}>&gt;</span>
                     </div>
                 </div>
 
                 {/* Horizontal Scroll Track wrapper */}
-                <div className={styles.carouselTrack}>
+                <div className={styles.carouselTrack} ref={trackRef}>
                     {[...mockStories, ...mockStories, ...mockStories].map((story, idx) => (
                         <Link key={idx} to={`/story/${story.id}`} className={styles.carouselCard}>
                             <div className={styles.cardImageWrapper}>
