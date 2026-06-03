@@ -1,0 +1,203 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+}
+.header{
+    margin-bottom: 2rem;
+}
+.subtitle {
+    font-size: var(--font-size-small);
+    color: var(--color-text-muted);
+    letter-spacing: 0.05rem;
+}
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-dark);
+    margin-top: 0.5rem;
+}
+.headingWrapper {
+    margin-bottom: 1.5rem;
+}
+.sectionHeading {
+    font-family: Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+.archiveCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+.imageFrame {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: rgba(28, 28, 28, 0.05);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.cardTitle {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cardArtist {
+    font-size: 11px;
+    color: var(--color-text-muted);
+}
+.backButton {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: underline;
+    align-self: flex-start;
+    padding: 0;
+}
+.tagLabel {
+    font-size: 11px;
+    color: var(--color-accent);
+    font-weight: 600;
+}
+.cardPreview {
+    border: 1px solid #D1C9BC;
+    padding: 1.25rem;
+    background-color: rgba(28, 28, 28, 0.01);
+    margin-bottom: 1rem;
+}
+.chapterTitle {
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+.content {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--color-dark);
+    max-height: 150px;
+    overflow-y: hidden;
+}
+.paginationRow {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+}
+.pageNavButton {
+    background: transparent;
+    border: 1px solid var(--color-dark);
+    padding: 6px 12px;
+    font-size: 11px;
+    cursor: pointer;
+}
+.pageNavButton:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.artWorkContainer {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.artworkLabel {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+.artworkFrame {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+.artworkImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.centeredContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.certificateFrame {
+    border: 2px solid var(--color-dark);
+    padding: 2.5rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #FFFDF9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.certificateIcon {
+    font-size: 2rem;
+    color: var(--color-accent);
+}
+.certificateTitle {
+    font-family: Georgia, serif;
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+}
+.certificateLabel {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+}
+.certificateBody {
+    border-top: 1px dashed #D1C9BC;
+    border-bottom: 1px dashed #D1C9BC;
+    padding: 1.5rem 0;
+    margin: 1.5rem 0;
+    width: 100%;
+}
+.certifyText {
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+.certifiedTitle {
+    display: block;
+    font-size: 15px;
+    color: var(--color-dark);
+}
+.certifiedArtist {
+    font-style: 11px;
+    color: var(--color-text-muted);
+}
+.nftBadge {
+    background-color: #F0EAE1;
+    padding: 10px 14px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(181, 148, 83, 0.3);
+}
+.nftLabel {
+    font-weight: 600;
+    font-size: 10px;
+    color: #b59453;
+    margin: 0 0 4px 0;
+}
+.nftCode {
+    font-size: 11px;
+    font-family: monospace;
+    color: var(--color-dark);
+}
