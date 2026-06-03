@@ -3,10 +3,13 @@ import { EditorialTitle, EditorialBody } from "../UI/Typography.jsx";
 import Button from "../UI/Button.jsx";
 import styles from "./ChapterViewer.module.css";
 import { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router";
 
-export default function ChapterViewer({ story, onJourneyOwned }) {
+export default function ChapterViewer({ stories, onJourneyOwned }) {
     const [currentStep, setCurrentStep] = useState(1);
     const topRef = useRef(null);  
+    const { id } = useParams();
+    const story = stories.find((s) => s.id === id);
     // Create Steps dynamically
     const steps = Array.from(
         { length: story.chapters.length + 1},
@@ -23,6 +26,9 @@ export default function ChapterViewer({ story, onJourneyOwned }) {
         return (
             <ArtworkReveal story={story} onJourneyOwned={onJourneyOwned}/>
         );
+    }
+     if (!story) {
+        return <p>Story not found.</p>
     }
     const activeChapter = story.chapters[currentStep - 1];
     return (
